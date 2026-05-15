@@ -1,3 +1,5 @@
+using System.Diagnostics;
+
 public static class Arrays
 {
     /// <summary>
@@ -13,7 +15,20 @@ public static class Arrays
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
 
-        return []; // replace this return statement with your own
+        // PLAN: 
+        // Iterate through the second parameter (length). 
+        // Multiply the value of each iteration by the first parameter (number) in each iteration. 
+        // Save each result in a list.
+
+        var doubles = new double[length];
+
+        for (int i=1; i<=length; i++)
+            doubles[i-1] = i*number;
+
+        Debug.WriteLine($"Number: {number} | Length: {length}");
+        Debug.WriteLine(String.Join(" | ", doubles));
+        
+        return doubles; // replace this return statement with your own
     }
 
     /// <summary>
@@ -29,5 +44,21 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        
+        // PLAN: 
+        // Copy the last items from the end based on the amount parameter to a temporal list.
+        // Remove the copied items from the list. 
+        // Then, insert the temporal list at the beginning of the list in the same order.
+        // Since the larger number is data.Count, there is no need to use mod.
+
+        Debug.WriteLine($"Amount: {amount}");
+        Debug.WriteLine(String.Join(" | ",data));
+
+        List<int> rotation = data.GetRange(data.Count-amount, amount);
+        data.RemoveRange(data.Count-amount, amount);
+        data.InsertRange(0, rotation);
+
+        Debug.WriteLine(String.Join(" | ",data));
+        
     }
 }
