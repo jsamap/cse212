@@ -16,9 +16,10 @@ public static class Arrays
         // be implemented by another person.
 
         // PLAN: 
-        // Iterate through the second parameter (length). 
-        // Multiply the value of each iteration by the first parameter (number) in each iteration. 
-        // Save each result in a list.
+        // Step 1. Create an array the size of the length parameter.
+        // Step 2. Create a FOR loop starting from 1 and ending at the length value, to iterate through the recently created array.. 
+        // Step 3. Multiply the value of the iteration variable by the number value (first parameter) in each iteration. 
+        // Step 4. Save each result in the array created using the iteration variable as the index of the array.
 
         var doubles = new double[length];
 
@@ -28,7 +29,7 @@ public static class Arrays
         Debug.WriteLine($"Number: {number} | Length: {length}");
         Debug.WriteLine(String.Join(" | ", doubles));
         
-        return doubles; // replace this return statement with your own
+        return doubles;
     }
 
     /// <summary>
@@ -46,10 +47,11 @@ public static class Arrays
         // be implemented by another person.
         
         // PLAN: 
-        // Copy the last items from the end based on the amount parameter to a temporal list.
-        // Remove the copied items from the list. 
-        // Then, insert the temporal list at the beginning of the list in the same order.
-        // Since the larger number is data.Count, there is no need to use mod.
+        // Step 1. Take the last n items of the list (n being the amount value) and copy them to a temporal list.
+        // Step 2. Remove the copied items from the end of the list. 
+        // Step 3. Then, insert the temporal list at the beginning of the original list in the same order.
+        // This logic will take any amount of items at the end of the list and will place them at the beginning of the list in the same order.
+        // Note: Since the larger number is data.Count, there is no need to use mod.
 
         Debug.WriteLine($"Amount: {amount}");
         Debug.WriteLine(String.Join(" | ",data));
